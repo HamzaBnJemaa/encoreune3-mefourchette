@@ -1,0 +1,9 @@
+{
+  "apphosting": {
+    "backendId": "encore-fourchette",
+    "rootDir": "./",
+    "ignore": ["node_modules", ".git", ".next", "data", "firebase-debug.log", "firebase-debug.*.log"]
+  },
+  "firestore": { "rules": "firestore.rules" },
+  "storage": { "rules": "storage.rules" }
+}

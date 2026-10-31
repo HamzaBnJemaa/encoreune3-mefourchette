@@ -1,0 +1,24 @@
+# Firebase App Hosting settings (runs the Next.js app on Cloud Run behind Google's CDN)
+runConfig:
+  cpu: 1
+  memoryMiB: 512
+  minInstances: 0   # 0 = free when nobody visits (first visit after idle takes a few seconds)
+  maxInstances: 2
+  concurrency: 80
+
+env:
+  # Store data in Firestore and photos in Cloud Storage
+  - variable: STORAGE_BACKEND
+    value: firebase
+    availability: [RUNTIME]
+  # ⚠️ Replace with YOUR bucket name (Firebase console → Storage → Files, shown at the top)
+  - variable: FIREBASE_STORAGE_BUCKET
+    value: YOUR-FIREBASE-PROJECT-ID.firebasestorage.app
+    availability: [RUNTIME]
+
+  # Optional — change the admin login (defaults: sonia / titourita). Prefer a secret for the password:
+  #   firebase apphosting:secrets:set ADMIN_PASSWORD
+  # - variable: ADMIN_USER
+  #   value: sonia
+  # - variable: ADMIN_PASSWORD
+  #   secret: ADMIN_PASSWORD
