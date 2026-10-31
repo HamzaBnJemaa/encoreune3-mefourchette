@@ -103,14 +103,13 @@
 .blob--amber { width: clamp(220px, 34vw, 520px); aspect-ratio: 1; background: var(--amber); right: -8vw; top: 6vh; opacity: 0.95; }
 .blob--coral { width: clamp(70px, 10vw, 150px); aspect-ratio: 1; background: var(--coral); right: 30vw; bottom: 8vh; }
 .blob--mint { width: clamp(44px, 6vw, 90px); aspect-ratio: 1; background: var(--mint); right: 38vw; top: 13vh; }
-.float { position: absolute; width: clamp(56px, 6vw, 120px); height: auto; object-fit: contain; filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.25)); will-change: transform; z-index: 1; animation: bob 6s ease-in-out infinite; }
+.float { position: absolute; width: clamp(56px, 6vw, 120px); height: auto; object-fit: contain; filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.25)); will-change: transform; z-index: 1; animation: none; }
 .float--1 { right: 18vw; top: 15vh; }
-.float--2 { right: 8vw; top: 46vh; animation-delay: -2s; }
-.float--3 { left: 18vw; top: 11vh; animation-delay: -4s; }
-.float--4 { left: 6vw; top: 58vh; animation-delay: -1s; }
+.float--2 { right: 8vw; top: 46vh; }
+.float--3 { left: 18vw; top: 11vh; }
+.float--4 { left: 6vw; top: 58vh; }
 .float--5 { right: 24vw; bottom: 9vh; width: clamp(70px, 8vw, 130px); }
 .float--6 { right: 8vw; bottom: 4vh; width: clamp(62px, 6vw, 110px); }
-@keyframes bob { 50% { translate: 0 -14px; rotate: 6deg; } }
 @media (max-width: 700px) {
   .hero { padding-top: calc(var(--nav-h) + 1.4rem); }
   .hero__title { margin-bottom: 1rem; }
@@ -134,11 +133,10 @@
 
 /* ---------- Marquee ---------- */
 .marquee { overflow: hidden; background: var(--amber); color: var(--ink); border-block: 2px solid var(--ink); margin-top: -2px; position: relative; z-index: 1; transform: rotate(-1.2deg) scale(1.03); margin-block: clamp(1.5rem, 4vw, 3rem) 0; }
-.marquee__track { display: flex; width: max-content; gap: 1.2rem; padding: 0.9rem 0; font-size: clamp(1.4rem, 3.4vw, 2.6rem); white-space: nowrap; animation: marquee 38s linear infinite; }
+.marquee__track { display: flex; width: max-content; gap: 1.2rem; padding: 0.9rem 0; font-size: clamp(1.4rem, 3.4vw, 2.6rem); white-space: nowrap; animation: none; }
 .marquee__sep { display: inline-flex; align-items: center; justify-content: center; color: var(--coral); }
 .marquee__sep svg { width: 0.82em; height: 0.82em; display: block; }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee:hover .marquee__track { animation-play-state: running; }
 
 /* ---------- Menu ---------- */
 .menu { padding-top: clamp(3.5rem, 8vw, 7rem); scroll-margin-top: 20px; }

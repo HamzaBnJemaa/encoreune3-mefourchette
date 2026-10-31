@@ -40,8 +40,6 @@ export default function Shop({ products }: { products: PublicProduct[] }) {
 
   /* nav state + hero parallax */
   useEffect(() => {
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const par = [...document.querySelectorAll<HTMLElement>('[data-speed]')];
     let ticking = false;
     const onScroll = () => {
       if (ticking) return; ticking = true;
@@ -50,7 +48,6 @@ export default function Shop({ products }: { products: PublicProduct[] }) {
         setScrolled(y > 40);
         setHidden((h) => (y > 500 && y > lastY.current + 6 && !document.documentElement.classList.contains('locked') ? true : y < lastY.current - 6 || y < 500 ? false : h));
         lastY.current = y;
-        if (!reduce && y < innerHeight * 1.3) par.forEach((el) => { el.style.transform = `translate3d(0, ${(y * parseFloat(el.dataset.speed || '0')).toFixed(1)}px, 0)`; });
         ticking = false;
       });
     };

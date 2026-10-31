@@ -13,7 +13,7 @@ env:
     availability: [RUNTIME]
   # ⚠️ Replace with YOUR bucket name (Firebase console → Storage → Files, shown at the top)
   - variable: FIREBASE_STORAGE_BUCKET
-    value: YOUR-FIREBASE-PROJECT-ID.firebasestorage.app
+    value: encoreune3emefourchette.firebasestorage.app
     availability: [RUNTIME]
 
   # Optional — change the admin login (defaults: sonia / titourita). Prefer a secret for the password:
